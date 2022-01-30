@@ -14,7 +14,7 @@ https://maps.googleapis.com/maps/api/directions/json?origin=18+summit+street+apa
 
 ## Next paste the full JSON response to this query here:
 
-```
+```JSON
 JSON
 geocoded_waypoints
 0
