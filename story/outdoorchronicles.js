@@ -1,49 +1,39 @@
-/*
- * Copyright 2019 Google LLC. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-// [START maps_marker_symbol_custom]
-// This example uses SVG path notation to add a vector-based symbol
-// as the icon for a marker. The resulting icon is a marker-shaped
-// symbol with a blue fill and no border.
-
-function initMap(): void {
-  const center = new google.maps.LatLng(-33.712451, 150.311823);
-  const map = new google.maps.Map(
-    document.getElementById("map") as HTMLElement,
-    {
-      zoom: 9,
-      center: center,
-    }
-  );
-
-  const svgMarker = {
-    path: "M10.453 14.016l6.563-6.609-1.406-1.406-5.156 5.203-2.063-2.109-1.406 1.406zM12 2.016q2.906 0 4.945 2.039t2.039 4.945q0 1.453-0.727 3.328t-1.758 3.516-2.039 3.070-1.711 2.273l-0.75 0.797q-0.281-0.328-0.75-0.867t-1.688-2.156-2.133-3.141-1.664-3.445-0.75-3.375q0-2.906 2.039-4.945t4.945-2.039z",
-    fillColor: "blue",
-    fillOpacity: 0.6,
-    strokeWeight: 0,
-    rotation: 0,
-    scale: 2,
-    anchor: new google.maps.Point(15, 30),
-  };
-
-  new google.maps.Marker({
-    position: map.getCenter(),
-    icon: svgMarker,
-    map: map,
+function initMap() {
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 5,
+    center: { lat: 44.039956, lng: -77.056496 },
+  });
+  // Create an array of alphabetical characters used to label the markers.
+  const labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  // Add some markers to the map.
+  // Note: The code uses the JavaScript Array.prototype.map() method to
+  // create an array of markers based on a given "locations" array.
+  // The map() method here has nothing to do with the Google Maps API.
+  const markers = locations.map((location, i) => {
+    return new google.maps.Marker({
+      position: location,
+      label: labels[i % labels.length],
+    });
+  });
+  // Add a marker clusterer to manage the markers.
+  new MarkerClusterer(map, markers, {
+    imagePath:
+      "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m",
   });
 }
-// [END maps_marker_symbol_custom]
-export { initMap };
+const locations = [
+{ lat: 40.70920280604806, lng: -74.00644614895027},
+{ lat: 40.753384326961836, lng: -73.98934147498935},
+{ lat: 40.70913444688292, lng: -74.01281723401323},
+{ lat: 40.676576577825756, lng: -73.98830090012436},
+{ lat: 40.72381192329156, lng: -74.0097633308105},
+{ lat: 40.73771936412929, lng: -73.99695795924494},
+{ lat: 40.7421905380155, lng: -74.00662384560603},
+{ lat: 40.93252878271926, lng: -73.89462511546168},
+{ lat: 40.711123100008955, lng: -74.00633370012342},  
+{ lat: 40.707589473926944, lng: -73.96872373081086},
+{ lat: 40.75462153324412, lng: -73.98035267313787},
+{ lat: 40.77140040810053, lng: -73.95921393080936},
+{ lat: 40.67869000944418, lng: -73.98716353081161},
+{ lat: 40.721305954864555, lng: -74.00942294615415}
+];
