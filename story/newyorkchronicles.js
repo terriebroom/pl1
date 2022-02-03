@@ -1,6 +1,6 @@
 function initMap() {
   const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 12,
+    zoom: 10,
   // This map shows all the job sites I worked on in the New York Metropolitan area.
   // With the map centred on the main office building
   // I wanted to rank the buildings in order of timeline worked on, thus the alphabetical order corresponding with the location order.
