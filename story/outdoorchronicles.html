@@ -1,48 +1,34 @@
 <!DOCTYPE html>
-<!--Inspired by: https://github.com/googlemaps/js-samples/tree/main/samples/45degrees/index.html-->
-<html lang="en">
+<html>
+    <!--Adapted from https://developers.google.com/maps/documentation/javascript/marker-clustering#maps_marker_clustering-html-->
   <head>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=yes" />
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    <title>Outdoor Chronicles</title>
+    <title>Marker Clustering</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script src="https://unpkg.com/@google/markerclustererplus@4.0.1/dist/markerclustererplus.min.js"></script>   
     <script
-      src="https://maps.google.com/maps/api/js?sensor=true"
-    ></script>
-    <script>
-      function initialize() {
-        var myLatlng = new google.maps.LatLng(18.406844172846622, -77.11087973253335);
-        var myOptions = {
-          zoom: 17,
-          center: myLatlng,
-          mapTypeId: google.maps.MapTypeId.SATELLITE,
-          tilt: 45,
-          overviewMapControl: true,
-          overviewMapControlOptions: {
-            opened: true,
-          },
-        };
-        var map = new google.maps.Map(
-          document.getElementById("map_canvas"),
-          myOptions
-        );
-      }
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCM-WWHYHIKY-do4kquMy9Z4wQaQx51AuE&callback=initMap"
+      defer>
     </script>
-     <script src="outdoorchronicles.js"></script>
+    <script src="clustering.js"></script>
     <style>
-        /* Makes the page occupy the entirety of the screen. */
+        /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+        #map {
+        height: 100%;
+        }
+
+        /* Optional: Makes the sample page fill the window. */
         html,
         body {
-          height: 100%;
-          margin: 0;
-          padding: 0;
+        height: 100%;
+        margin: 0;
+        padding: 0;
         }
-   </style>
-  </head>  
-  <body onload="initialize()">
-    <div
-      id="map_canvas"
-    ></div>
-    <script src="https://maps.google.com/maps/api/js?key=AIzaSyCM-WWHYHIKY-do4kquMy9Z4wQaQx51AuE" async>
-    </script>
+    </style>
+
+  </head>
+  <body>
+    <div id="map"></div>
+
   </body>
 </html>
