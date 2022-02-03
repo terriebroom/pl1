@@ -1,5 +1,6 @@
 function initMap() {
   const map = new google.maps.Map(document.getElementById("map"), {
+    mapTypeId: 'satellite',
     zoom: 12,
   // This map shows all the job sites I worked on in the New York Metropolitan area.
   // With the map centred on the main office building
