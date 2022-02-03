@@ -23,9 +23,6 @@ function initMap() {
       label: labels[i % labels.length],
     });
   });
-  // I was not able to get rid of the surrounding texts and icons not used
-  // I was not able to change the style of my map background, so please click on satellite when you open the image.
-  // That will tell my story better.
   // Clusterer marker added to manage the appearance of the markers on zoom.
   new MarkerClusterer(map, markers, {
     imagePath:
