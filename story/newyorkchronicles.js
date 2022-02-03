@@ -1,5 +1,5 @@
 function initMap() {
-  const map = new google.maps.MapTypeId.SATELLITE(document.getElementById("map"), {
+  const map = new google.maps.Map.SATELLITE(document.getElementById("map"), {
     zoom: 10,
     center: { lat: 40.753384326961836, lng: -73.98934147498935 },
   });
