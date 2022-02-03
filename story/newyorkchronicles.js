@@ -2,11 +2,6 @@ function initMap() {
   const map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: 40.753384326961836, lng: -73.98934147498935 },
     zoom: 12,
-// Setting satellite layer for base map.
-    mapTypeId: "satellite",
-  });
-  map.setTilt(45);
-}
 // Create an array of alphabetical characters used to label the markers.
 // Building icons used to label the markers - retrieved from https://www.vectorstock.com/royalty-free-vector/building-construction-icon-vector-27400233
   const labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
