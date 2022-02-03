@@ -21,6 +21,7 @@ function initMap() {
       "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m",
   });
 }
+// Image retrieved from https://www.vectorstock.com/royalty-free-vector/building-construction-icon-vector-27400233
 const locations = [
 { lat: 40.70920280604806, lng: -74.00644614895027},
 { lat: 40.753384326961836, lng: -73.98934147498935},
