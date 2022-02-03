@@ -1,19 +1,18 @@
 function initMap() {
   const map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: 40.753384326961836, lng: -73.98934147498935 },
     zoom: 12,
-// Create an array of alphabetical characters used to label the markers.
-// Building icons used to label the markers - retrieved from https://www.vectorstock.com/royalty-free-vector/building-construction-icon-vector-27400233
+    center: { lat: 44.039956, lng: -77.056496 },
+  });
+  // Create an array of alphabetical characters used to label the markers.
   const labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-// Add some markers to the map.
-// The map() method here has nothing to do with the Google Maps API.
+  // Adding markers to the map at the locations specified.
   const markers = locations.map((location, i) => {
     return new google.maps.Marker({
       position: location,
       label: labels[i % labels.length],
     });
   });
-// Clusterer marker added to manage the appearance of the markers on zoom.
+  // Clusterer marker added to manage the appearance of the markers on zoom.
   new MarkerClusterer(map, markers, {
     imagePath:
       "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m",
