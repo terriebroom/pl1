@@ -9,7 +9,7 @@ function initMap() {
   satelliteLayer.setMap(map);
   // Building icons used to label the markers - retrieved from https://www.vectorstock.com/royalty-free-vector/building-construction-icon-vector-27400233
   const labels = {
-    imagePath: "images/BUILDING.jpeg",
+    imagePath: "images/BUILDING.jpg",
     // Setting marker size to 20 pixels wide by 32 pixels high.
     size: new google.maps.Size(20, 32),
     // Setting origin for image to be (0, 0).
