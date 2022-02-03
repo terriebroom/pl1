@@ -1,15 +1,16 @@
 function initMap() {
   const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 12,
     center: { lat: 40.753384326961836, lng: -73.98934147498935 },
+    zoom: 12,
+// Setting satellite layer for base map.
+    mapTypeId: "satellite",
   });
-  // Setting satellite layer for base map.
-  const satelliteLayer = new google.maps.SatelliteLayer();
-
-  satelliteLayer.setMap(map);
+  map.setTilt(45);
+}
   // Building icons used to label the markers - retrieved from https://www.vectorstock.com/royalty-free-vector/building-construction-icon-vector-27400233
   const labels = {
-    imagePath: "images/BUILDING.jpg",
+    imagePath:
+    "images/BUILDING.jpg",
     // Setting marker size to 20 pixels wide by 32 pixels high.
     size: new google.maps.Size(20, 32),
     // Setting origin for image to be (0, 0).
