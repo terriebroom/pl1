@@ -4,12 +4,13 @@ function initMap() {
     zoom: 12,
 // Setting satellite layer for base map.
     mapTypeId: "satellite",
-  });
   map.setTilt(45);
-}
+  });
+// Create an array of alphabetical characters used to label the markers.
 // Building icons used to label the markers - retrieved from https://www.vectorstock.com/royalty-free-vector/building-construction-icon-vector-27400233
-  const labels = "ABCDEFGHIJKLMN"
-// Adding custom markers to the map
+  const labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+// Add some markers to the map.
+// The map() method here has nothing to do with the Google Maps API.
   const markers = locations.map((location, i) => {
     return new google.maps.Marker({
       position: location,
@@ -22,7 +23,6 @@ function initMap() {
       "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m",
   });
 }
-// Image retrieved from https://www.vectorstock.com/royalty-free-vector/building-construction-icon-vector-27400233
 const locations = [
 { lat: 40.70920280604806, lng: -74.00644614895027},
 { lat: 40.753384326961836, lng: -73.98934147498935},
