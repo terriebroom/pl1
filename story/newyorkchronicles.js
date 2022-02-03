@@ -1,14 +1,23 @@
 function initMap() {
   const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 10,
+    zoom: 12,
     center: { lat: 40.753384326961836, lng: -73.98934147498935 },
   });
-  // Create an array of alphabetical characters used to label the markers.
-  const labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  // Add some markers to the map.
-  // Note: The code uses the JavaScript Array.prototype.map() method to
-  // create an array of markers based on a given "locations" array.
-  // The map() method here has nothing to do with the Google Maps API.
+  // Setting satellite layer for base map.
+  const satelliteLayer = new google.maps.SatelliteLayer();
+
+  satelliteLayer.setMap(map);
+  // Building icons used to label the markers - retrieved from https://www.vectorstock.com/royalty-free-vector/building-construction-icon-vector-27400233
+  const labels = {
+    imagePath: "images/BUILDING.jpeg",
+    // Setting marker size to 20 pixels wide by 32 pixels high.
+    size: new google.maps.Size(20, 32),
+    // Setting origin for image to be (0, 0).
+    origin: new google.maps.Point(0, 0),
+    // Setting anchors for the markers to be the building base (0, 32).
+    anchor: new google.maps.Point(0, 32),
+  };
+  // Adding custom markers to the map
   const markers = locations.map((location, i) => {
     return new google.maps.Marker({
       position: location,
