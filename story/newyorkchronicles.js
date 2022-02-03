@@ -1,7 +1,10 @@
 function initMap() {
   const map = new google.maps.Map(document.getElementById("map"), {
     zoom: 12,
-    center: { lat: 44.039956, lng: -77.056496 },
+  // This map shows all the job sites I worked on in the New York Metropolitan area.
+  // With the map centred on the main office building
+  // I wanted to rank the buildings in order of timeline worked on, thus the alphabetical order corresponding with the location order.
+    center: { lat: 40.753384326961836, lng: -73.98934147498935 },
   });
   // I spend so many hours trying to make my map look like I imagined, but I just could not get it to do all the things I wanted.
   // Not to make excuses, but Github has been having issues and my committs took a long time to be reflected on my map webpage
