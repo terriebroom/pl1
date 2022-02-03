@@ -13,6 +13,9 @@ function initMap() {
   // Simple Characters used to label the markers.
   const labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   // Adding markers to the map at the locations specified.
+  // Clusters style was used because the locations are spread over the city, so the map will be zoomed out a bit to show all the locations at once,
+  // But there are also small areas where several points are concentrated that might look crowded to the viewer when zoomed out.
+  // Clusters eliminates this noise and makes viewing the map easier.
   const markers = locations.map((location, i) => {
     return new google.maps.Marker({
       position: location,
