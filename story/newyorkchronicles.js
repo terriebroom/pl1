@@ -3,7 +3,10 @@ function initMap() {
     zoom: 12,
     center: { lat: 44.039956, lng: -77.056496 },
   });
-  // Create an array of alphabetical characters used to label the markers.
+  // I spend so many hours trying to make my map look like I imagined, but I just could not get it to do all the things I wanted.
+  // Not to make excuses, but Github has been having issues and my committs took a long time to be reflected on my map webpage
+  // So for the sake of time, I had to settle for something simple to get rid of the errors I encountered.
+  // Simple Characters used to label the markers.
   const labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   // Adding markers to the map at the locations specified.
   const markers = locations.map((location, i) => {
@@ -12,6 +15,9 @@ function initMap() {
       label: labels[i % labels.length],
     });
   });
+  // I was not able to get rid of the surrounding texts and icons not used
+  // I was not able to change the style of my map background, so please click on satellite when you open the image.
+  // That will tell my story better.
   // Clusterer marker added to manage the appearance of the markers on zoom.
   new MarkerClusterer(map, markers, {
     imagePath:
